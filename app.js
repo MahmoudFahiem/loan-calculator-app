@@ -29,6 +29,8 @@ function calculateResults(e) {
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
+        showLoading();
+        setTimeout(showResults, 2000);
     } else {
         if(!loanForm.querySelector('.error')) {
             createErrorMessage(loanForm, "Check the entered numbers");
@@ -49,4 +51,14 @@ function removeErrorMessages(e) {
             errorMessage.remove();
         })
     }
+}
+
+function showLoading() {
+    loader.classList.add('show');
+    results.classList.remove('show');
+}
+
+function showResults() {
+    loader.classList.remove('show');
+    results.classList.add('show');
 }

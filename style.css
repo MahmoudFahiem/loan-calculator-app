@@ -1,7 +1,7 @@
-#loading.hide {
+#loading, #results {
     display: none;
 }
 
-#results.hide {
-    display: none;
+#loading.show, #results.show {
+    display: block;
 }
